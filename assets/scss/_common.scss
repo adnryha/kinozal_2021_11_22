@@ -1,0 +1,17 @@
+@use "presets" as *;
+
+html {
+  font-size: $font-size;
+}
+body {
+  font-family: $font-main;
+  font-size: 1rem;
+}
+a {
+  color: $color-primary;
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    color: $color-accent;
+  }
+}
