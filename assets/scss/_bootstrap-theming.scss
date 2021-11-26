@@ -1,2 +1,54 @@
-@use "../presets" as *;
-@use "../mixins" as *;
+@use "presets" as *;
+@use "mixins" as *;
+.navbar-inverse {
+  background-color: $color-deep-dark;
+  .navbar-nav {
+    > li > a {
+      transition: background-color 0.5s;
+      @include sm-min {
+        border-radius: 4px;
+      }
+      @include sm {
+        text-align: center;
+      }
+      &:focus,
+      &:hover {
+        background-color: $color-primary;
+      }
+    }
+    .active > a {
+      background-color: $color-primary-dark;
+      border-radius: 4px;
+      &:focus,
+      &:hover {
+        background-color: $color-primary;
+        transition: background-color 0.5s;
+        border-radius: 4px;
+      }
+    }
+  }
+}
+
+.navbar-left {
+  @include sm-min {
+    margin-bottom: 0;
+    > li {
+      margin: 5px 5px 5px 0;
+    }
+  }
+}
+.navbar-right {
+  @include sm-min {
+    margin-top: 0;
+    > li {
+      margin: 5px 0px 5px 5px;
+    }
+  }
+}
+.navbar-header {
+  text-align: center;
+}
+.navbar-toggle {
+  float: none;
+  margin-right: 0;
+}
