@@ -1,2 +1,5 @@
 @use "presets" as *;
 @use "mixins" as *;
+.left-sdebar {
+  margin-bottom: $gap-xl;
+}
