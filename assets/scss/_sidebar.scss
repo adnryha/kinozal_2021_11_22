@@ -3,3 +3,28 @@
 .left-sdebar {
   margin-bottom: $gap-xl;
 }
+.vertical-slider {
+  border-radius: 4px;
+  overflow: hidden;
+  &__image {
+    width: 100%;
+  }
+}
+.user-login {
+  position: relative;
+  &__tabs {
+    position: absolute;
+    top: 0;
+    right: $gap-md;
+    border: none;
+    a {
+      padding: 14px 5px 12px !important;
+      color: $color-gray;
+      background-color: transparent !important;
+      border: none !important;
+    }
+    .active > a {
+      color: $color-white !important;
+    }
+  }
+}
