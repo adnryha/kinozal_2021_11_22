@@ -5,15 +5,17 @@ html {
   font-size: $font-size;
 }
 body {
+  overflow-y: scroll;
+
   font-family: $font-main;
   font-size: 1rem;
-  overflow-y: scroll;
 }
 a {
   color: $color-primary;
   &:hover,
   &:focus {
     text-decoration: none;
+
     color: $color-accent;
   }
 }
