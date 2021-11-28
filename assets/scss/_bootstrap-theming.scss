@@ -1,7 +1,12 @@
 @use "presets" as *;
 @use "mixins" as *;
+
 .navbar-inverse {
+  margin-bottom: 0;
+
+  border-color: transparent;
   background-color: $color-deep-dark;
+
   .navbar-nav {
     > li > a {
       transition: background-color 0.5s;
@@ -12,79 +17,103 @@
       @include sm {
         text-align: center;
       }
-      &:focus,
-      &:hover {
+
+      &:hover,
+      &:focus {
         background-color: $color-primary;
       }
     }
-    .active > a {
-      border-radius: 4px;
+
+    > .active > a {
       background-color: $color-primary-dark;
-      &:focus,
-      &:hover {
-        transition: background-color 0.5s;
 
-        border-radius: 4px;
-        background-color: $color-primary;
+      &:hover,
+      &:focus {
+        background-color: $color-primary-light;
       }
     }
   }
 }
 
-.navbar-left {
-  @include sm-min {
-    margin-bottom: 0;
-    > li {
-      margin: 5px 5px 5px 0;
-    }
-  }
-}
-.navbar-right {
-  @include sm-min {
-    margin-top: 0;
-    > li {
-      margin: 5px 0 5px 5px;
-    }
-  }
-}
 .navbar-header {
   text-align: center;
 }
+
 .navbar-toggle {
   float: none;
 
   margin-right: 0;
 }
+
+.navbar-left {
+  @include sm-min {
+    > li {
+      margin: 5px 5px 5px 0;
+    }
+  }
+  @include sm {
+    margin-bottom: 0;
+  }
+}
+
+.navbar-right {
+  @include sm-min {
+    > li {
+      margin: 5px 0 5px 5px;
+    }
+  }
+  @include sm {
+    margin-top: 0;
+  }
+}
+
 .panel-info {
   border: none;
   background-color: $color-gray-light;
   box-shadow: none;
+
   &:not(:last-of-type) {
     margin-bottom: $gap * 2;
   }
+
   &:last-of-type {
     margin-bottom: 0;
   }
-  > .panel-heading {
+
+  .panel-heading {
     letter-spacing: 0.08em;
 
     color: $color-white;
-    border-color: none;
+    border: none;
     background-color: $color-accent;
 
     font-size: 1.25rem;
   }
+
+  &-body {
+
+  }
 }
-.panel-body {
-  border: 1px solid $color-gray;
-  border-radius: 0 0 4px 4px;
-}
+
+.btn-lg,
 .input {
   &-lg,
   &-group-lg > .form-control {
     font-size: 0.875rem;
   }
 }
+
+.well {
+  border-color: $color-gray;
+  background-color: $color-gray-light;
+}
+
+.embed-responsive {
+  border: 1px solid $color-gray;
+  border-bottom: none;
+  border-radius: 4px 4px 0 0;
+}
+
 .thumbnail {
   transition: background-color 0.25s;
 }

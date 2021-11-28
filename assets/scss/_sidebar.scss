@@ -1,92 +1,128 @@
 @use "presets" as *;
 @use "mixins" as *;
+
 .left-sidebar {
   margin-bottom: $gap-xl;
 }
+.site-search{
+  border-radius: 4px;
+  border: 1px solid $color-gray;
+}
 .vertical-slider {
   overflow: hidden;
-  border-radius: 4px;
+
   &__image {
     width: 100%;
   }
 }
+
 .user-login {
   position: relative;
+  border-radius: 4px;
+  border: 1px solid $color-gray;
   &__tabs {
     position: absolute;
     top: 0;
     right: $gap;
     margin-right: -5px;
     border: none;
+
     a {
       padding: 14px 5px 11px !important;
       color: $color-gray;
       border: none !important;
       background-color: transparent !important;
     }
+
     .active a {
       color: $color-white !important;
     }
   }
 }
+
 $image-size: 75px;
 $image-size-with-padding: $image-size + $gap-md;
+
 .site-news {
+  border: 1px solid $color-gray;
+  border-radius: 4px;
   &-item {
     position: relative;
+
     clear: both;
+
     &:not(:last-child) {
       min-height: $image-size-with-padding;
       margin-bottom: $gap;
+
       &::after {
         position: absolute;
         right: 0;
         bottom: -4px;
+
         width: calc(100% - #{$image-size-with-padding});
         height: 1px;
+
         content: "";
+
         background-color: $color-gray;
       }
     }
+
     &:hover {
       a {
         color: $color-accent;
       }
+
       .thumbnail {
         border-color: $color-accent;
         background-color: $color-accent;
       }
     }
+
     &__thumbnail {
       float: left;
+
       width: $image-size;
       margin: 0 $gap-md $gap-md 0;
     }
+
     &__image {
       width: 100%;
     }
+
     &__title {
       margin-bottom: 0.5em;
     }
+
     &__link {
       transition: color 0.25s;
+
       @include block-shortener(1rem, 1.5, 50px, 2);
     }
+
     &__date {
       text-align: right;
+
       color: $color-gray-dark;
+
       font-size: 0.8rem;
     }
   }
 }
+
 .top-films {
   &__body {
     padding-right: 0;
     padding-left: 0;
+    border: 1px solid $color-gray !important;
+    border-radius: 0 0 4px 4px !important;
   }
+
   &__list {
     margin-bottom: 0;
   }
+
   &__item {
     margin-right: -1px;
     margin-left: -1px;
@@ -94,28 +130,34 @@ $image-size-with-padding: $image-size + $gap-md;
 
     color: $color-primary !important;
     background-color: transparent;
+
     &:first-child {
       border-top: none;
       border-radius: 0;
     }
+
     &:last-child {
       border-bottom: none;
       border-radius: 0;
     }
+
     &:hover,
     &:focus {
       color: $color-white !important;
       border-color: $color-accent;
       background-color: $color-accent !important;
+
       .badge {
         background-color: $color-dark;
       }
     }
   }
+
   &__badge {
     position: absolute;
     top: 50%;
     right: $gap;
+
     transform: translateY(-50%);
   }
 }

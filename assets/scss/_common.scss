@@ -4,14 +4,19 @@
 html {
   font-size: $font-size;
 }
+
 body {
-  overflow-y: scroll;
+  overflow-x: hidden;
+
+  max-width: 100%;
+
   font-family: $font-main;
-  font-size: 1rem;
+  font-size: $font-size;
 }
 
 a {
   color: $color-primary;
+
   &:hover,
   &:focus {
     text-decoration: none;
@@ -19,37 +24,82 @@ a {
     color: $color-accent;
   }
 }
-section {
-  position: relative;
-  overflow: hidden;
-}
+
 h1 {
+  font-family: $font-header;
+
+  @include xs-min {
+    margin: -$gap-md 0 1em;
+
+    font-size: 3rem;
+  }
+  @include xs {
+    margin: 0 0 1em;
+
+    font-size: 2rem;
+  }
+
   &::after {
     position: absolute;
+
     width: 100%;
-    margin: 0.85em 0 0 15px;
+    margin: 0.85em 0 0 $gap;
+
     content: "";
-    border-bottom: 3px solid #f0ad4f;
+
+    border-bottom: 3px solid $color-accent-light;
   }
-  font-size: 3rem !important;
-  margin: -10px 0 48px 0 !important;
 }
+
 h2 {
-  margin: 60px 0 45px 45px;
-  font-size: 2.5rem;
+  font-family: $font-header;
+
+  @include xs-min {
+    margin: ($gap * 4) 0 ($gap * 3) ($gap * 3);
+
+    font-size: 2.5rem;
+  }
+  @include xs {
+    margin: ($gap * 3) 0 ($gap * 2) ($gap * 3);
+
+    font-size: 1.75rem;
+  }
+
   &::before {
     position: absolute;
     left: 0;
+
     width: 30px;
-    margin: 10px 0 0 0;
+    margin: 0.25em 0 0 0;
+
     content: "";
-    border-bottom: 3px solid #f0ad4f;
+
+    border-bottom: 3px solid $color-accent-light;
   }
+
   &::after {
     position: absolute;
+
     width: 100%;
     margin: 0.85em 0 0 15px;
+
     content: "";
-    border-bottom: 3px solid #f0ad4f;
+
+    border-bottom: 3px solid $color-accent-light;
   }
+}
+
+h3 {
+  @include xs-min {
+    font-size: 1.5rem;
+  }
+  @include xs {
+    font-size: 1.25rem;
+  }
+}
+
+section {
+  position: relative;
+
+  overflow: hidden;
 }
