@@ -1,34 +1,23 @@
 @use "presets" as *;
 @use "mixins" as *;
-@use "presets" as *;
-@use "mixins" as *;
-
 .footer {
   padding-top: $gap * 3;
-
   color: $color-gray;
   background-color: $color-dark;
-
   ul {
     padding: 0;
-
     list-style: none;
   }
-
   a {
     color: $color-gray-dark;
-
     &:hover {
       color: $color-white;
     }
   }
 }
-
 .footer-fifth {
   margin: 20px 0;
-
   text-align: center;
-
   a {
     color: $color-gray;
   }

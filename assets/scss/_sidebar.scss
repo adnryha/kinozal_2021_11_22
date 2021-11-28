@@ -1,11 +1,10 @@
 @use "presets" as *;
 @use "mixins" as *;
-.left-sdebar {
+.left-sidebar {
   margin-bottom: $gap-xl;
 }
 .vertical-slider {
   overflow: hidden;
-
   border-radius: 4px;
   &__image {
     width: 100%;
@@ -16,76 +15,68 @@
   &__tabs {
     position: absolute;
     top: 0;
-    right: $gap-md;
-
+    right: $gap;
+    margin-right: -5px;
     border: none;
     a {
-      padding: 14px 5px 12px !important;
-
+      padding: 14px 5px 11px !important;
       color: $color-gray;
       border: none !important;
       background-color: transparent !important;
     }
-    .active > a {
+    .active a {
       color: $color-white !important;
     }
   }
 }
 $image-size: 75px;
 $image-size-with-padding: $image-size + $gap-md;
-
-.site-news-item {
-  position: relative;
-  &:not(:last-of-type) {
-    min-height: $image-size-with-padding;
-    margin-bottom: $gap;
-    &::after {
-      position: absolute;
-      right: 0;
-      bottom: -4px;
-
-      width: calc(100% - #{$image-size-with-padding});
-      height: 1px;
-
-      content: "";
-
-      background-color: $color-gray;
+.site-news {
+  &-item {
+    position: relative;
+    clear: both;
+    &:not(:last-child) {
+      min-height: $image-size-with-padding;
+      margin-bottom: $gap;
+      &::after {
+        position: absolute;
+        right: 0;
+        bottom: -4px;
+        width: calc(100% - #{$image-size-with-padding});
+        height: 1px;
+        content: "";
+        background-color: $color-gray;
+      }
     }
-  }
-  &:hover {
-    a {
-      color: $color-accent;
+    &:hover {
+      a {
+        color: $color-accent;
+      }
+      .thumbnail {
+        border-color: $color-accent;
+        background-color: $color-accent;
+      }
     }
-    .thumbnail {
-      border-color: $color-accent;
-      background-color: $color-accent;
+    &__thumbnail {
+      float: left;
+      width: $image-size;
+      margin: 0 $gap-md $gap-md 0;
     }
-  }
-
-  &__thumbnail {
-    float: left;
-
-    width: $image-size;
-    margin: 0 $gap-md $gap-md 0;
-  }
-
-  &__image {
-    width: 100%;
-  }
-  &__title {
-    margin-bottom: 0.5em;
-  }
-  &__link {
-    transition: color 0.25s;
-
-    @include block-shortener(1rem, 1.5, 50px, 2);
-  }
-  &__date {
-    text-align: right;
-
-    color: $color-gray-dark;
-
-    font-size: 0.8rem;
+    &__image {
+      width: 100%;
+    }
+    &__title {
+      margin-bottom: 0.5em;
+    }
+    &__link {
+      transition: color 0.25s;
+      @include block-shortener(1rem, 1.5, 50px, 2);
+    }
+    &__date {
+      text-align: right;
+      color: $color-gray-dark;
+      font-size: 0.8rem;
+    }
   }
 }
 .top-films {
@@ -102,7 +93,7 @@ $image-size-with-padding: $image-size + $gap-md;
     padding-right: 55px;
 
     color: $color-primary !important;
-    background: transparent;
+    background-color: transparent;
     &:first-child {
       border-top: none;
       border-radius: 0;
@@ -114,8 +105,8 @@ $image-size-with-padding: $image-size + $gap-md;
     &:hover,
     &:focus {
       color: $color-white !important;
+      border-color: $color-accent;
       background-color: $color-accent !important;
-      background-color: $color-accent;
       .badge {
         background-color: $color-dark;
       }
@@ -125,7 +116,6 @@ $image-size-with-padding: $image-size + $gap-md;
     position: absolute;
     top: 50%;
     right: $gap;
-
     transform: translateY(-50%);
   }
 }
