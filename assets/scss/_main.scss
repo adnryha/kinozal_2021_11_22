@@ -1,6 +1,5 @@
 @use "presets" as *;
 @use "mixins" as *;
-
 .main {
   margin-bottom: $gap-xl;
   .site-search {
@@ -10,6 +9,18 @@
     margin-bottom: $gap * 4;
   }
 }
+.new-films-title {
+  font-size: 3rem !important;
+
+  &::after {
+    position: absolute;
+    width: 100%;
+    margin: 0.85em 0 0 15px;
+    content: "";
+    border-bottom: 3px solid #f0ad4f;
+  }
+}
+
 .new-films,
 .top-week {
   &-row {
