@@ -4,12 +4,11 @@
 .left-sidebar {
   margin-bottom: $gap-xl;
 }
-.site-search{
-  border-radius: 4px;
-  border: 1px solid $color-gray;
-}
+
 .vertical-slider {
   overflow: hidden;
+
+  border-radius: 4px;
 
   &__image {
     width: 100%;
@@ -18,17 +17,19 @@
 
 .user-login {
   position: relative;
-  border-radius: 4px;
-  border: 1px solid $color-gray;
+
   &__tabs {
     position: absolute;
     top: 0;
     right: $gap;
+
     margin-right: -5px;
+
     border: none;
 
     a {
       padding: 14px 5px 11px !important;
+
       color: $color-gray;
       border: none !important;
       background-color: transparent !important;
@@ -44,8 +45,6 @@ $image-size: 75px;
 $image-size-with-padding: $image-size + $gap-md;
 
 .site-news {
-  border: 1px solid $color-gray;
-  border-radius: 4px;
   &-item {
     position: relative;
 
@@ -115,8 +114,6 @@ $image-size-with-padding: $image-size + $gap-md;
   &__body {
     padding-right: 0;
     padding-left: 0;
-    border: 1px solid $color-gray !important;
-    border-radius: 0 0 4px 4px !important;
   }
 
   &__list {
